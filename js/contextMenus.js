@@ -634,6 +634,14 @@ function mainTemplateInit (nodeProps, frame) {
       click: (item, focusedWindow) => {
         windowActions.inspectElement(nodeProps.offsetX, nodeProps.offsetY)
       }
+    },
+    {
+      label: '1Password',
+      click: (item, focusedWindow) => {
+        if (focusedWindow) {
+          ipc.send('chrome-browser-action-clicked-aomjjhallfgjeglblehebfpbcfeobpgk', '1Password')
+        }
+      }
     })
   return template
 }
